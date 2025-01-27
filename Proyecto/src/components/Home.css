@@ -1,153 +1,290 @@
 /* General: Fondo y diseño inicial */
 body {
+    /* Elimina el margen por defecto del body */
     margin: 0;
+    /* Elimina el padding por defecto del body */
     padding: 0;
+    /* Hace que el fondo cubra toda el área disponible */
     background-size: cover;
+    /* Centra el fondo */
     background-position: center;
+    /* Fija el fondo para que no se mueva al hacer scroll */
     background-attachment: fixed;
+    /* Establece el color del texto a blanco */
     color: #ffffff;
+    /* Usa Arial como fuente principal */
     font-family: Arial, sans-serif;
+    /* Evita que se desplace el contenido horizontalmente */
     overflow-x: hidden;
 }
 
 /* Header y navegación */
 header {
+    /* Fija el encabezado en la parte superior de la pantalla */
     position: fixed;
+    /* Coloca el encabezado al principio de la pantalla */
     top: 0;
+    /* Alinea el encabezado con el borde izquierdo */
     left: 0;
+    /* Hace que el encabezado ocupe todo el ancho de la pantalla */
     width: 100%;
+    /* Establece el fondo del encabezado a negro */
     background-color: black;
+    /* Asegura que el encabezado esté encima de otros elementos */
     z-index: 1000;
+    /* Añade espacio dentro del encabezado */
     padding: 10px 20px;
 }
 
 nav ul {
+    /* Elimina los puntos de la lista */
     list-style-type: none;
+    /* Elimina el margen por defecto */
     margin: 0;
+    /* Elimina el padding por defecto */
     padding: 0;
+    /* Organiza los elementos de la lista en línea con flex */
     display: inline-flex;
-    justify-content: flex-end; /* Alinea todo el menú a la derecha */
+    /* Alinea los elementos del menú a la derecha */
+    justify-content: flex-end;
+    /* Alinea los elementos al principio verticalmente */
     align-items: flex-start;
+    /* Espacio entre los elementos del menú */
     gap: 20px;
 }
 
 nav li {
+    /* Elimina el margen de los elementos de la lista */
     margin: 0;
 }
 
 nav a {
+    /* Hace que los enlaces sean bloques en línea */
     display: inline-block;
+    /* Establece el color de los enlaces a blanco */
     color: white;
+    /* Centra el texto de los enlaces */
     text-align: center;
+    /* Añade padding dentro de los enlaces */
     padding: 8px 16px;
+    /* Elimina el subrayado de los enlaces */
     text-decoration: none;
+    /* Redondea las esquinas de los enlaces */
     border-radius: 5px;
 }
 
 nav a:hover {
+    /* Cambia el fondo cuando se pasa el ratón sobre el enlace */
     background-color: #ddd;
+    /* Cambia el color del texto a negro */
     color: black;
 }
 
 .boton1 {
+    /* Añade padding al botón */
     padding: 10px 20px;
+    /* Establece el fondo del botón a negro */
     background-color: #000000;
+    /* Establece el color del texto a blanco */
     color: white;
+    /* Elimina el borde del botón */
     border: none;
+    /* Redondea las esquinas del botón */
     border-radius: 5px;
+    /* Cambia el cursor a mano cuando se pasa sobre el botón */
     cursor: pointer;
 }
 
 .boton1:hover {
+    /* Cambia el color de fondo al pasar el ratón */
     background-color: #f73228;
 }
 
 /* Sección de usuario */
 .usuario {
+    /* Usa flexbox para el diseño */
     display: flex;
+    /* Coloca los elementos en una columna */
     flex-direction: column;
+    /* Centra los elementos horizontalmente */
     align-items: center;
-    margin-top: 80px; /* Ajustado para el header */
+    /* Añade espacio arriba, para no tapar el encabezado */
+    margin-top: 80px;
+    /* Centra el texto */
     text-align: center;
 }
 
+/* Selecciona los elementos con las clases .Principal1 y .Principal2 */
 .Principal1,
 .Principal2 {
+    /* Elimina el margen de los elementos */
     margin: 0;
+    
+    /* Establece el tamaño de la fuente a 2rem */
     font-size: 2rem;
+    
+    /* Establece el color del texto a blanco */
     color: #ffffff;
+    
+    /* Inicia con un brillo fuerte blanco alrededor del texto */
+    text-shadow: 0 0 15px #ffffff, 0 0 30px #ffffff, 0 0 45px #ffffff, 0 0 60px #ffffff;
+    
+    /* Inicializa la opacidad en 0, haciendo que el texto comience invisible */
+    opacity: 0;
+    
+    /* Aplica animaciones: fadeIn para hacer el texto visible y glowing para el brillo */
+    animation: fadeIn 2s forwards, glowing 2s forwards;
 }
+
+/* Animación para hacer que el texto se vuelva visible */
+@keyframes fadeIn {
+    0% {
+        /* Comienza invisible (opacidad 0) */
+        opacity: 0;
+    }
+    100% {
+        /* Termina visible (opacidad 1) */
+        opacity: 1;
+    }
+}
+
+/* Animación para el brillo del texto */
+@keyframes glowing {
+    0% {
+        /* Inicia con un resplandor fuerte alrededor del texto */
+        text-shadow: 0 0 15px #ffffff, 0 0 30px #ffffff, 0 0 45px #ffffff, 0 0 60px #ffffff;
+    }
+    100% {
+        /* Termina sin resplandor (sin texto brillante) */
+        text-shadow: 0 0 0px #ffffff, 0 0 0px #ffffff, 0 0 0px #ffffff, 0 0 0px #ffffff;
+    }
+}
+
 
 /* Galería de imágenes */
 .gallery {
+    /* Usa un diseño de cuadrícula */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Mostrar imágenes en una fila */
+    /* Crea 5 columnas en la cuadrícula */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    /* Añade espacio entre los elementos */
     gap: 20px;
+    /* Añade espacio dentro de la galería */
     padding: 20px;
+    /* Añade espacio arriba de la galería */
     margin-top: 100px;
+    /* Alinea los elementos al principio de la cuadrícula */
     align-items: start;
 }
 
 .gallery-item {
+    /* Centra el texto dentro del item */
     text-align: center;
+    /* Fondo oscuro y semitransparente */
     background-color: rgba(0, 0, 0, 0.7);
+    /* Redondea las esquinas */
     border-radius: 10px;
+    /* Añade espacio dentro de cada item */
     padding: 10px;
+    /* Añade sombra al item */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Efecto de zoom al aparecer */
+    animation: zoomIn 0.5s ease-out forwards;
+    
+    /* Transición suave para el zoom y el foco */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Definición de la animación de zoom al aparecer */
+@keyframes zoomIn {
+    0% {
+        opacity: 0; /* Comienza invisible */
+        transform: scale(0); /* Comienza más pequeño */
+    }
+    100% {
+        opacity: 1; /* Termina visible */
+        transform: scale(1); /* Escala al tamaño normal */
+    }
+}
+
+/* Efecto al pasar el cursor sobre el item */
+.gallery-item:hover {
+    /* Aplica el zoom al pasar el cursor */
+    transform: scale(1.1); /* Aumenta el tamaño en un 10% */
+    
+    /* Foco blanco en la parte de atrás */
+    box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); /* Resplandor blanco */
 }
 
 /* Reducción de tamaño de las imágenes */
 .gallery-image {
-    width: 70%; /* Reduce el tamaño de las imágenes al 70% */
-    max-width: 200px; /* Limita el tamaño máximo de las imágenes a 200px */
+    /* Establece el tamaño de las imágenes al 70% del contenedor */
+    width: 70%;
+    /* Limita el tamaño máximo de las imágenes a 200px */
+    max-width: 200px;
+    /* Mantiene la relación de aspecto de la imagen */
     height: auto;
+    /* Redondea las esquinas de las imágenes */
     border-radius: 10px;
 }
 
 .gallery-description {
+    /* Añade espacio arriba de la descripción */
     margin-top: 10px;
+    /* Establece el tamaño de la fuente */
     font-size: 14px;
+    /* Establece el color del texto a blanco */
     color: #fff;
-    white-space: pre-line; /* Asegura que el formato de salto de línea sea respetado */
+    /* Mantiene los saltos de línea en la descripción */
+    white-space: pre-line;
 }
 
 /* Media queries para pantallas pequeñas */
 @media (max-width: 768px) {
     nav ul {
-        flex-direction: column; /* Cambia a columnas en pantallas pequeñas */
+        /* Cambia el diseño de los enlaces a columna */
+        flex-direction: column;
+        /* Reduce el espacio entre los enlaces */
         gap: 10px;
     }
 
     .Principal1,
     .Principal2 {
+        /* Reduce el tamaño de la fuente en pantallas pequeñas */
         font-size: 1.5rem;
     }
 
     .gallery {
-        grid-template-columns: 1fr; /* Una sola columna para dispositivos pequeños */
+        /* Cambia a una sola columna en pantallas pequeñas */
+        grid-template-columns: 1fr;
     }
 
     /* Ajustar el tamaño de las imágenes en pantallas pequeñas */
     .gallery-image {
-        width: 60%; /* Aún más pequeño en pantallas pequeñas */
+        /* Hace las imágenes aún más pequeñas */
+        width: 60%;
     }
 }
 
 @media (max-width: 480px) {
     nav a {
+        /* Reduce el padding de los enlaces */
         padding: 6px 12px;
     }
 
     .boton1 {
+        /* Reduce el padding del botón */
         padding: 8px 16px;
     }
 
     .gallery-description {
+        /* Reduce el tamaño de la fuente en la descripción */
         font-size: 12px;
     }
 
     /* Ajustar el tamaño de las imágenes en pantallas aún más pequeñas */
     .gallery-image {
-        width: 50%; /* Aún más pequeño en pantallas muy pequeñas */
+        /* Hace las imágenes aún más pequeñas en pantallas muy pequeñas */
+        width: 50%;
     }
 }
