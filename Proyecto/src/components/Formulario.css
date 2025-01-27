@@ -1,0 +1,137 @@
+body {
+    background-image: url('../img/laboratorio.jpg'); /* URL de tu imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-position: center; /* Centra la imagen */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.contenedor {
+    border: 2px solid white;
+    background-color: rgb(253, 253, 253);
+    width: 90%; /* Cambia a un ancho relativo */
+    max-width: 340px; /* Ancho máximo para pantallas grandes */
+    height: auto; /* Permite que la altura se ajuste dinámicamente */
+    padding: 20px; /* Agrega padding en lugar de establecer una altura fija */
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+input {
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: 40px;
+    margin-top: 15px;
+    background-color: rgb(212, 210, 210);
+    border: 1px solid rgb(212, 210, 210);
+    color: black;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.botonLogin {
+    background-color: rgb(42, 70, 210);
+    color: white;
+    margin-top: 20px;
+    width: 100%; /* Ajusta al ancho del contenedor */
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.nombre, .contraseña {
+    font-size: 1rem; /* Usa unidades relativas */
+    color: black;
+    margin-top: 15px;
+    text-align: left;
+    width: 100%;
+}
+
+.titulo {
+    color: rgb(250, 48, 48);
+    font-size: 3rem; /* Usa unidades relativas */
+    text-align: center;
+    transition: font-size 0.3s ease; /* Transición para suavizar el cambio de tamaño */
+}
+
+p {
+    font-size: 1.5rem; /* Usa unidades relativas */
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 768px) {
+    body {
+        background-size: contain; /* Ajusta la imagen para que se vea completa en pantallas más pequeñas */
+    }
+
+    .contenedor {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    input {
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .botonLogin {
+        height: 35px;
+    }
+
+    .titulo {
+        font-size: 2rem; /* Reduce el tamaño del título en pantallas más pequeñas */
+    }
+
+    .nombre, .contraseña {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        background-size: cover; /* Reajusta la imagen para cubrir nuevamente en pantallas muy pequeñas */
+    }
+
+    .contenedor {
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    input {
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .botonLogin {
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .titulo {
+        font-size: 1.5rem; /* Reduce aún más el tamaño del título en pantallas pequeñas */
+    }
+
+    .nombre, .contraseña {
+        font-size: 0.8rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}

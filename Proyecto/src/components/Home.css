@@ -1,0 +1,153 @@
+/* General: Fondo y diseño inicial */
+body {
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Header y navegación */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    z-index: 1000;
+    padding: 10px 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+    justify-content: flex-end; /* Alinea todo el menú a la derecha */
+    align-items: flex-start;
+    gap: 20px;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.boton1 {
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.boton1:hover {
+    background-color: #f73228;
+}
+
+/* Sección de usuario */
+.usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px; /* Ajustado para el header */
+    text-align: center;
+}
+
+.Principal1,
+.Principal2 {
+    margin: 0;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+/* Galería de imágenes */
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* Mostrar imágenes en una fila */
+    gap: 20px;
+    padding: 20px;
+    margin-top: 100px;
+    align-items: start;
+}
+
+.gallery-item {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Reducción de tamaño de las imágenes */
+.gallery-image {
+    width: 70%; /* Reduce el tamaño de las imágenes al 70% */
+    max-width: 200px; /* Limita el tamaño máximo de las imágenes a 200px */
+    height: auto;
+    border-radius: 10px;
+}
+
+.gallery-description {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+    white-space: pre-line; /* Asegura que el formato de salto de línea sea respetado */
+}
+
+/* Media queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Cambia a columnas en pantallas pequeñas */
+        gap: 10px;
+    }
+
+    .Principal1,
+    .Principal2 {
+        font-size: 1.5rem;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr; /* Una sola columna para dispositivos pequeños */
+    }
+
+    /* Ajustar el tamaño de las imágenes en pantallas pequeñas */
+    .gallery-image {
+        width: 60%; /* Aún más pequeño en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        padding: 6px 12px;
+    }
+
+    .boton1 {
+        padding: 8px 16px;
+    }
+
+    .gallery-description {
+        font-size: 12px;
+    }
+
+    /* Ajustar el tamaño de las imágenes en pantallas aún más pequeñas */
+    .gallery-image {
+        width: 50%; /* Aún más pequeño en pantallas muy pequeñas */
+    }
+}
